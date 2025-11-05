@@ -34,8 +34,8 @@ public class Entity : MonoBehaviour
         // Move towards target
         rb.linearVelocity = direction * moveSpeed;
 
-        // Optional: Rotate entity to face movement direction
+        // Rotate to face the target
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
 }
